@@ -1,0 +1,40 @@
+.authRequired {
+  height: 15vh;
+  width: 100%;
+  padding: auto;
+  text-align: center;
+  background: url(https://tawadacleantech.com/wp-content/uploads/2017/11/line-background-dark-abstract.jpg)
+    no-repeat;
+  background-size: cover;
+  box-shadow: 0 4px 10px -2px gray;
+  margin-bottom: 5px;
+  animation: fade 1s;
+}
+
+span {
+  color: brown;
+  cursor: pointer;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+h1 {
+  margin: auto;
+  font-weight: bold;
+  color: white;
+}
+
+@media only screen and (min-width: 480px) {
+  h1 {
+    line-height: 15vh;
+    margin: auto;
+  }
+}

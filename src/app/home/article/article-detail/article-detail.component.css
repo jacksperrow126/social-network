@@ -1,0 +1,22 @@
+.articleContainer {
+  max-height: 90vh;
+  overflow: scroll;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+p {
+  overflow: scroll;
+}
+
+i {
+  cursor: pointer;
+}
+
+* {
+  word-wrap: break-word;
+}

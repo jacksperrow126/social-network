@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="loginBackground animated bounceInLeft">
+    <p>Vịnh Hạ Long - Việt Nam</p>
+  </div>
+  <div class=" animated fadeInRight loginFormContainer">
+    <h1>Log in</h1>
+    <p *ngIf="err" class="err">Email or Password is Invalid</p>
+    <form #form="ngForm" (submit)="logIn(form.value)">
+      <mat-form-field appearance="outline" class="loginForm">
+        <mat-label>Email</mat-label>
+        <input matInput #email name="email" ngModel required />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="loginForm">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          #password
+          name="password"
+          ngModel
+          required
+        />
+      </mat-form-field>
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Log in
+      </button>
+    </form>
+    <p>
+      Haven't got an account yet? Click here to
+      <a routerLink="/sign-up">sign up</a>
+    </p>
+  </div>
+</div>

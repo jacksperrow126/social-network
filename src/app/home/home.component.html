@@ -1,0 +1,31 @@
+<div class="container-fluid1">
+  <div class="homeContent">
+    <div class="userPreview">
+      <app-user-preview></app-user-preview>
+    </div>
+    <div class="article">
+      <div class="createArticle" (click)="createArticle()">
+        What are you thinking about?
+      </div>
+
+      <mat-tab-group #matTab>
+        <mat-tab label="Feed">
+          <app-feed></app-feed>
+        </mat-tab>
+        <mat-tab label="Global Articles">
+          <app-global-article></app-global-article>
+        </mat-tab>
+        <mat-tab label="Articles by Tag">
+          <app-tags class="tagOnSmallScreen"></app-tags>
+          <router-outlet></router-outlet>
+        </mat-tab>
+        <mat-tab label="Find your friends">
+          <app-find-user></app-find-user>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div class="tag">
+      <app-tags (click)="navigateTab()"></app-tags>
+    </div>
+  </div>
+</div>

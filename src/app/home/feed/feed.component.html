@@ -1,0 +1,35 @@
+<h1 *ngIf="checkFollow" class="oops">
+  Oops! Look like you haven't followed anyone!
+</h1>
+<ng-container *ngIf="articles; else spiner">
+  <app-article [articles]="articles" *ngIf="articles"></app-article>
+
+  <div class="buttonContainer">
+    <div class="pagination">
+      <button
+        class="fnBtn"
+        (click)="back()"
+        [disabled]="show == 0 ? 'disabled' : ''"
+      >
+        <i class="fas fa-backward"></i>
+      </button>
+      <button class="page">{{ show + 1 }}</button>
+      <button
+        class="fnBtn"
+        (click)="next()"
+        [disabled]="show > endPage - 1 ? 'disabled' : ''"
+      >
+        <i class="fas fa-forward"></i>
+      </button>
+    </div>
+  </div>
+</ng-container>
+<ng-template #spiner>
+  <div class="spinner">
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</ng-template>

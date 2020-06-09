@@ -1,0 +1,38 @@
+<div class="btnContainer">
+  <button
+    mat-flat-button
+    color="warn"
+    *ngIf="follower == undefined"
+    (click)="searchFriend()"
+  >
+    Load Follower's List
+  </button>
+</div>
+<ng-container *ngIf="loading">
+  <div class="spinner">
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="follower">
+  <h1>Here is what we've got for you!</h1>
+  <div class="cardContainer">
+    <div class="card" *ngFor="let user of follower">
+      <div class="imgBx">
+        <img
+          src="https://pbs.twimg.com/profile_images/1085199662938767360/GDqyN9Qt_400x400.jpg"
+        />
+      </div>
+      <div class="details">
+        <h2>
+          {{ user }}<br /><span [routerLink]="['/user', user]">
+            Don't know me? Click!
+          </span>
+        </h2>
+      </div>
+    </div>
+  </div>
+</ng-container>

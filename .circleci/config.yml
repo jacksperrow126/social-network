@@ -1,0 +1,31 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: 
+                name: Install project dependencies
+                command: npm install
+            - run:
+                name: Run Lint
+                command: npm run lint
+            - run: 
+                name: Run Formatter (Check format)
+                command: npm run check-format:all
+            - run:
+                name: Build project
+                command: npm run build
+            - run:
+                name: Deploy to Firebase
+                command: npm run firebase -- deploy --token "$FIREBASE_TOKEN" --only hosting
+    
+workflows:
+    build-and-test:
+      jobs:
+        - build-and-test

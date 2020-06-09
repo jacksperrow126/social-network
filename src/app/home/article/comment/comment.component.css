@@ -1,0 +1,49 @@
+.input {
+  width: 100%;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.commentContainer {
+  height: 20vh;
+  overflow: scroll;
+  animation: toggle 1s;
+}
+
+@keyframes toggle {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 20vh;
+  }
+}
+
+.commentContainer .comment {
+  animation: fade 0.5s;
+  transition: all 0.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.commentContainer .comment i {
+  cursor: pointer;
+}
+
+.hide {
+  transform: scale(0);
+  transition: all 0.5s;
+}

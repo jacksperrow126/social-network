@@ -1,0 +1,68 @@
+<div class="main-edit" *ngIf="!isUpdate; else spinner">
+  <div class="edit-header text-center">
+    <h2>My Profile</h2>
+  </div>
+  <form #form="ngForm">
+    <div class="edit-body">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          type="text"
+          matInput
+          [(ngModel)]="myProfile.email"
+          name="email"
+          email
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label> Username </mat-label>
+        <input
+          type="text"
+          matInput
+          name="username"
+          required
+          [(ngModel)]="myProfile.username"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput name="password" ngModel />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Bio</mat-label>
+        <input type="text" matInput name="bio" [(ngModel)]="myProfile.bio" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Avatar</mat-label>
+        <input
+          type="text"
+          matInput
+          name="image"
+          [(ngModel)]="myProfile.image"
+        />
+      </mat-form-field>
+    </div>
+    <small>Profile is public with other user...</small>
+    <div class="edit-footer text-center">
+      <button
+        mat-mini-fab
+        color="primary"
+        [disabled]="form.invalid"
+        (click)="updateProfile(form.value)"
+      >
+        <i class="far fa-check-circle"></i>
+      </button>
+    </div>
+  </form>
+</div>
+
+<ng-template #spinner>
+  <div class="spin">
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</ng-template>

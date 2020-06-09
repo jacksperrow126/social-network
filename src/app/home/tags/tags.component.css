@@ -1,0 +1,38 @@
+.tagContainer {
+  height: 94vh;
+  padding: 10px;
+}
+
+.box-tag {
+  padding: 10%;
+  box-shadow: 3px 5px 15px -7px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  background: #f0f2f5;
+}
+
+.one-tag {
+  border: dashed 1px black;
+  border-radius: 8px;
+  color: rgb(65, 192, 137);
+  animation: fadeInDown 1s;
+}
+
+.one-tag:hover {
+  background-color: rgb(59, 172, 123);
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

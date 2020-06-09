@@ -1,0 +1,26 @@
+.contentContainer {
+  animation: fade 2s;
+  padding: 0 10%;
+}
+
+@media only screen and (max-width: 765px) {
+  mat-tab-group {
+    box-shadow: 3px 5px 25px -7px rgba(0, 0, 0, 0.2);
+    width: 100vw;
+  }
+
+  .contentContainer {
+    animation: fade 2s;
+    padding: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

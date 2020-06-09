@@ -1,0 +1,36 @@
+.pageContainer {
+  background: url(https://images7.alphacoders.com/680/680253.jpg) no-repeat;
+  width: 100%;
+  height: 94vh;
+  background-size: cover;
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.pageContainer .content {
+  position: absolute;
+  top: 25vh;
+  left: 20vh;
+  width: 380px;
+  font-size: 15px;
+  font-family: 'Circular-Book', Arial, sans-serif;
+  line-height: 1.278;
+  color: #5f5d5d;
+}
+
+@media only screen and (max-width: 610px) {
+  .pageContainer .content {
+    width: 90vw;
+    padding: 0 5vw;
+    left: 0;
+  }
+}

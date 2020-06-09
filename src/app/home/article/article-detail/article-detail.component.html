@@ -1,0 +1,53 @@
+<div *ngIf="articleDetail" class="articleContainer">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image" class="avatar">
+        <img [src]="articleDetail.author.image" class="avatar" />
+      </div>
+      <mat-card-title>
+        <h2 (click)="navigateToUser()" style="cursor: pointer;">
+          {{ articleDetail.author.username }}
+        </h2>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <p>
+          {{ articleDetail.createdAt | date: 'mediumDate'
+          }}<i
+            [mat-dialog-close]="'delete'"
+            *ngIf="articleDetail.author.username === currentUser?.user.username"
+            (click)="delete(articleDetail.slug)"
+            class="fas fa-trash-alt"
+          ></i>
+        </p>
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <h1>{{ articleDetail.title }}</h1>
+      <p>{{ articleDetail.body }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        *ngIf="currentUser"
+        (click)="like()"
+        mat-stroked-button
+        color="primary"
+      >
+        {{ articleDetail.favoritesCount }}
+        <i
+          [class]="
+            articleDetail.favorited ? 'fas fa-heart' : 'fas fa-heart-broken'
+          "
+        ></i>
+      </button>
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="commentOn = !commentOn"
+      >
+        Comment
+      </button>
+    </mat-card-actions>
+    <app-comment *ngIf="commentOn" [slug]="articleDetail.slug"></app-comment>
+  </mat-card>
+</div>

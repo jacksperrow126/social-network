@@ -1,0 +1,168 @@
+nav {
+  position: relative;
+  height: 6vh;
+  background-color: rgb(66, 133, 244);
+  color: rgb(51, 48, 48);
+  box-shadow: 0 4px 10px -2px gray;
+  padding: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  z-index: 1;
+}
+
+nav .logoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+nav .logoContainer .logo {
+  position: absolute;
+  height: 5vh;
+  top: 0.5vh;
+  cursor: pointer;
+}
+
+nav .userContainer .userIcon {
+  position: absolute;
+  top: 0.5vh;
+  right: 3vw;
+  height: 5vh;
+  width: 6vh;
+  overflow: hidden;
+  transition: all 1s;
+  padding: 0;
+  background: transparent;
+  border-radius: 2%;
+  display: grid;
+  grid-template-columns: 1fr;
+  cursor: pointer;
+  animation: fade1 1s;
+}
+
+h3 {
+  opacity: 0;
+  text-align: center;
+  transition: all 1s;
+  line-height: 45px;
+}
+
+nav .userContainer .userIcon div {
+  padding: auto;
+}
+
+nav .userContainer .userIcon:hover {
+  height: 180px;
+  width: 180px;
+  background: #e8e9ec;
+  z-index: 1;
+}
+
+nav .userContainer .userIcon:hover h3 {
+  opacity: 1;
+}
+
+nav .userContainer .avatarContainer {
+  border-radius: 50%;
+  position: absolute;
+  height: 5vh;
+  width: 5vh;
+  right: 0.1vw;
+  overflow: hidden;
+}
+
+nav .userContainer img {
+  position: absolute;
+  width: 5vh;
+  right: 0.1vw;
+}
+
+nav .userContainer div {
+  height: 45px;
+}
+
+nav .userContainer .option:hover {
+  background-color: rgb(79, 140, 238);
+}
+
+.toggle,
+.mobileBtn {
+  display: none;
+}
+
+@media only screen and (max-width: 938px) {
+  nav .userContainer {
+    display: none;
+  }
+
+  .mobileBtn {
+    display: block;
+    padding-left: 70%;
+    width: 100%;
+    position: relative;
+  }
+
+  i {
+    font-size: 25px;
+  }
+
+  .mobileOption {
+    height: 5vh;
+    width: 100%;
+    color: black;
+  }
+
+  .mobileOption h3 {
+    opacity: 1;
+    color: black;
+    text-align: left;
+    padding-left: 5px;
+    font-weight: bold;
+  }
+}
+
+.show {
+  display: block;
+  width: 100vw;
+  transition: all 1s;
+  height: 20vh;
+  background-color: #f0f2f5;
+  animation: toggle 1s;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+
+.avatarOnMobile {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+}
+
+@keyframes toggle {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 20vh;
+  }
+}
+
+.hide {
+  display: block;
+  width: 100vw;
+  transition: all 1s;
+  height: 0vh;
+  animation: hide 1s;
+  overflow: hidden;
+}
+
+@keyframes hide {
+  from {
+    height: 20vh;
+  }
+
+  to {
+    height: 0vh;
+  }
+}

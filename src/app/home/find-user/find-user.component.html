@@ -1,0 +1,47 @@
+<form (submit)="findUser(input.value)">
+  <mat-form-field appearance="outline" class="input">
+    <mat-label>Search</mat-label>
+    <input matInput name="title" #input placeholder="Type username to search" />
+  </mat-form-field>
+</form>
+<div class="resultContainer" *ngIf="startSearching">
+  <div class="result" *ngIf="user || err; else spiner">
+    <div class="card" *ngIf="user">
+      <div class="imgBx">
+        <img
+          [src]="
+            user.profile.image ==
+            'https://static.productionready.io/images/smiley-cyrus.jpg'
+              ? 'https://i.redd.it/b3esnz5ra34y.jpg'
+              : user.profile.image
+          "
+        />
+      </div>
+      <div class="details">
+        <h2>
+          {{ user.profile.username }}<br /><span
+            [routerLink]="['/user', user.profile.username]"
+            >{{
+              user.profile.bio
+                ? user.profile.bio
+                : 'Click if you find me interesting!'
+            }}</span
+          >
+        </h2>
+      </div>
+    </div>
+    <div *ngIf="err">
+      <h1>Can't find your friend,please try again!</h1>
+    </div>
+  </div>
+</div>
+
+<ng-template #spiner>
+  <div class="spinner">
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</ng-template>

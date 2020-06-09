@@ -1,0 +1,65 @@
+<nav class="navbar">
+  <div></div>
+  <div routerLink="/home" class="logoContainer">
+    <img
+      src="https://himilcon.files.wordpress.com/2018/10/cropped-casco-griego-e1539711116603.png?w=200"
+      class="logo"
+    />
+  </div>
+  <div *ngIf="currentUser" class="userContainer">
+    <div class="userIcon">
+      <div>
+        <div class="avatarContainer">
+          <img
+            [src]="
+              currentUser.user.image
+                ? currentUser.user.image
+                : 'https://i.redd.it/b3esnz5ra34y.jpg'
+            "
+            class="avatar"
+            routerLink="/home"
+          />
+        </div>
+      </div>
+      <div class="option">
+        <h3 routerLink="/about">About</h3>
+      </div>
+      <div class="option">
+        <h3 [routerLink]="['/user', currentUser?.user.username]">My Profile</h3>
+      </div>
+      <div class="option">
+        <h3 (click)="logOut()">Log Out</h3>
+      </div>
+    </div>
+  </div>
+  <div class="mobileBtn" *ngIf="currentUser">
+    <i class="fas fa-bars" (click)="showNav()"></i>
+  </div>
+</nav>
+<div class="toggle">
+  <div class="mobileOption" (click)="hide()">
+    <h3>
+      <img
+        [src]="
+          currentUser?.user.image
+            ? currentUser?.user.image
+            : 'https://i.redd.it/b3esnz5ra34y.jpg'
+        "
+        class="avatarOnMobile"
+        routerLink="/home"
+      />
+      {{ currentUser?.user.username }}
+    </h3>
+  </div>
+  <div class="mobileOption" (click)="hide()">
+    <h3 routerLink="/about"><i class="fas fa-home"></i> About</h3>
+  </div>
+  <div class="mobileOption" (click)="hide()">
+    <h3 [routerLink]="['/user', currentUser?.user.username]">
+      <i class="fas fa-address-card"></i> My Profile
+    </h3>
+  </div>
+  <div class="mobileOption" (click)="hide()">
+    <h3 (click)="logOut()"><i class="fas fa-sign-out-alt"></i> Log Out</h3>
+  </div>
+</div>

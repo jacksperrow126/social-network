@@ -1,0 +1,36 @@
+<div class="main-cover">
+  <div class="main-cover">
+    <div class="triangle"></div>
+    <div class="circle"></div>
+    <div class="rectangle">
+      <div
+        class="circle-rec"
+        [style]="
+          'background-image:' + 'url(' + userProfile?.profile.image + ');'
+        "
+      >
+        <div class="cir-edit" (click)="openEditUser()" *ngIf="isMyAccount">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <div
+          class="cir-edit"
+          (click)="followUser()"
+          *ngIf="!isMyAccount && follow == false"
+        >
+          <i class="fas fa-bell"></i>
+        </div>
+        <div
+          class="cir-edit"
+          (click)="unFollowUser()"
+          *ngIf="!isMyAccount && follow == true"
+        >
+          <i class="fas fa-bell-slash"></i>
+        </div>
+      </div>
+    </div>
+    <div class="rectangle-2">
+      <div class="name">{{ userProfile?.profile.username }}</div>
+      <div class="bio">{{ userProfile?.profile.bio }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="articleList" *ngIf="articles" [@listAnimation]="articles.length">
+  <div *ngFor="let article of articles" class="article">
+    <app-article-preview [article]="article"></app-article-preview>
+  </div>
+</div>

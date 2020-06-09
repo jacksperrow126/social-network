@@ -1,0 +1,16 @@
+.articleList {
+  margin: auto;
+  width: 610px;
+  height: 85vh;
+  padding-top: 26px;
+}
+
+.article {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 620px) {
+  .articleList {
+    width: 100vw;
+  }
+}

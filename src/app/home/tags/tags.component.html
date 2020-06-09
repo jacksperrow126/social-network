@@ -1,0 +1,17 @@
+<div class="tagContainer" *ngIf="tags">
+  <div class="box-tag">
+    <h2>Popular Tags</h2>
+    <ul class="list-inline">
+      <ng-container *ngFor="let tag of tags">
+        <div class="list-inline-item mt-1">
+          <li
+            class="one-tag d-flex align-items-center p-1 "
+            (click)="displayTag(tag)"
+          >
+            <mat-icon>loyalty</mat-icon> ◦ {{ tag }}
+          </li>
+        </div>
+      </ng-container>
+    </ul>
+  </div>
+</div>

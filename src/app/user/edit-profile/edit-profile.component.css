@@ -1,0 +1,32 @@
+.main-edit .edit-header {
+  color: #3f51b5;
+  margin-bottom: 3%;
+}
+
+.main-edit .edit-header h2 {
+  margin: 0 auto;
+  border-bottom: 3px dashed black;
+  width: 30%;
+  padding: 2px;
+}
+
+.main-edit .edit-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.spin {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  outline: none;
+}
+
+mat-label {
+  color: #3f51b5;
+  font-weight: 500;
+}

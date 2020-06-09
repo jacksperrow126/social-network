@@ -1,0 +1,29 @@
+<div class="main-profile" *ngIf="!isLoading; else spin">
+  <app-user-cover [username]="user"></app-user-cover>
+  <div class="contentContainer">
+    <div class="article">
+      <mat-tab-group
+        style=" box-shadow: 3px 5px 15px -7px rgba(0, 0, 0, 0.75); height: 100vh;"
+      >
+        <mat-tab label="My Articles">
+          <app-my-articles [username]="user"></app-my-articles>
+        </mat-tab>
+        <mat-tab label="Favorite Articles">
+          <app-favorite-articles [username]="user"></app-favorite-articles>
+        </mat-tab>
+        <mat-tab label="Follower" *ngIf="user === currentUser.user.username">
+          <app-follower></app-follower>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+<ng-template #spin>
+  <div class=" d-flex justify-content-center">
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</ng-template>

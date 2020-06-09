@@ -1,0 +1,38 @@
+<form #form="ngForm" (submit)="editArticle(form)">
+  <mat-form-field appearance="outline" class="input">
+    <mat-label>Title</mat-label>
+    <textarea
+      matInput
+      name="title"
+      ngModel
+      [(ngModel)]="articleDetail.title"
+    ></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="input">
+    <mat-label>Description</mat-label>
+    <textarea
+      matInput
+      name="description"
+      ngModel
+      [(ngModel)]="articleDetail.description"
+    ></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="input">
+    <mat-label>Body</mat-label>
+    <textarea
+      matInput
+      name="body"
+      ngModel
+      rows="5"
+      [(ngModel)]="articleDetail.body"
+    ></textarea>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+    Edit
+  </button>
+</form>

@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.articleContainer {
+  display: grid;
+  grid-template-columns: 200px 400px;
+  box-shadow: 3px 5px 15px -7px rgba(0, 0, 0, 0.75);
+  width: 600px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.articleContainer .userPart {
+  width: 100%;
+  background-color: #ff6b5f;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 200px 400px;
+  border-radius: 5px;
+  transition: width 1s;
+  overflow: hidden;
+}
+
+.articleContainer .articlePart {
+  width: 100%;
+  border-radius: 5px;
+  word-wrap: break-word;
+  padding: 20px;
+}
+
+.articleContainer .userPart:hover {
+  width: 600px;
+  animation: move 1s;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.articleContainer .userPart .userAvatar {
+  text-align: center;
+  padding: 30px;
+}
+
+.articleContainer .userPart .userAvatar h3 {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.articleContainer .userPart .userAvatar h3:hover {
+  text-decoration: underline azure;
+}
+
+.articleContainer .userPart .articleLike {
+  text-align: center;
+  padding-top: 20px;
+  color: rgb(238, 240, 218);
+}
+
+.articleContainer .userPart .articleLike .moreOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.articleContainer .userPart .articleLike .moreOptions .like {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
+}
+
+.articleContainer .userPart h3 {
+  margin-top: 20px;
+  border-radius: 7px;
+  background: red;
+  color: rgb(238, 240, 218);
+  font-weight: bold;
+}
+
+.articleContainer .articlePart {
+  text-align: center;
+  position: relative;
+}
+
+.articleContainer .articlePart .action {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.articleContainer .articlePart .action:hover {
+  color: #ff6b5f;
+  cursor: pointer;
+}
+
+.like:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+i {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 27px;
+}
+
+.fade {
+  opacity: 0.2;
+}
+
+@media only screen and (max-width: 620px) {
+  .articleContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 3px 5px 15px -7px rgba(0, 0, 0, 0.75);
+    width: 100vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .articleContainer .userPart {
+    width: 100%;
+    background-color: #ff6b5f;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: 1fr 1px;
+    border-radius: 5px;
+    transition: width 1s;
+    overflow: hidden;
+  }
+
+  .articleContainer .userPart .userAvatar {
+    padding: 0;
+    padding-top: 10px;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .articleContainer .articlePart {
+    width: 100%;
+    border-radius: 5px;
+    word-wrap: break-word;
+  }
+
+  .articleContainer .userPart .articleLike {
+    display: none;
+  }
+
+  .articleContainer .userPart:hover {
+    width: 100%;
+    animation: move 1s;
+  }
+}
+
+.hide {
+  transform: scale(0);
+  transition: all 0.5s;
+}

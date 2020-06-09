@@ -1,0 +1,76 @@
+.userPreviewContainer {
+  height: 94vh;
+  text-align: center;
+  padding-top: 20px;
+  animation: fade1 1s;
+}
+
+@keyframes fade1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.userPreviewContainer .username {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.userPreviewContainer .socialNetwork {
+  width: 200px;
+}
+
+/* Card  */
+.userProfile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cardCover {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  margin: 5p auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}

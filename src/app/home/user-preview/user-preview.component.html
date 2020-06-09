@@ -1,0 +1,29 @@
+<div class="userPreviewContainer" *ngIf="currentUser != undefined">
+  <div class="userProfile">
+    <div class="cardCover">
+      <div class="card" [routerLink]="['/user', currentUser.user.username]">
+        <div class="card_image">
+          <img
+            [src]="
+              currentUser.user.image
+                ? currentUser.user.image
+                : 'https://i.redd.it/b3esnz5ra34y.jpg'
+            "
+          />
+        </div>
+      </div>
+    </div>
+    <p class="username">{{ currentUser.user.username }}</p>
+    <p>{{ currentUser.user.bio }}</p>
+  </div>
+  <div>
+    <a href="http://facbook.com" target="_blank" rel="noopener noreferrer"
+      ><img
+        src="https://drinkanddrugsnews.com/wp-content/uploads/2018/07/Social_media_icon.png"
+        alt="social network"
+        class="socialNetwork"
+    /></a>
+  </div>
+
+  <button mat-flat-button color="warn" (click)="logOut()">Log out</button>
+</div>

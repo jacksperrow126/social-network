@@ -1,0 +1,55 @@
+.welcomePage {
+  width: 100%;
+  height: 94vh;
+  background-image: url('https://images5.alphacoders.com/390/thumb-1920-390620.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.welcomePage .contentContainer {
+  margin-top: 20vh;
+  text-align: center;
+  color: white;
+}
+
+.welcomePage .contentContainer h1 {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.welcomePage .contentContainer .authContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.welcomePage .contentContainer .authContainer .auth {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.welcomePage .contentContainer .authContainer .auth:hover {
+  background: rgb(240, 248, 255, 0.3);
+}
+
+.welcomePage .contentContainer h4:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 420px) {
+  .welcomePage .contentContainer h1 {
+    font-size: 60px;
+  }
+
+  .welcomePage .contentContainer .authContainer {
+    grid-gap: 20px;
+  }
+}

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="main-sign-up">
+    <div></div>
+    <div class="sign-up-form">
+      <mat-icon (click)="back()" style="cursor: pointer;"
+        >keyboard_arrow_left</mat-icon
+      >
+      <form #form="ngForm" (submit)="register(form.value)">
+        <h1>Register</h1>
+        <p *ngIf="err.username" class="err">Username {{ err.username[0] }}</p>
+        <mat-form-field appearance="outline" class="sign-up-control">
+          <mat-label>User Name</mat-label>
+          <input matInput required name="username" ngModel />
+        </mat-form-field>
+        <p *ngIf="err.email" class="err">Email {{ err.email[0] }}</p>
+        <mat-form-field appearance="outline" class="sign-up-control">
+          <mat-label>Email</mat-label>
+          <input matInput required name="email" ngModel />
+        </mat-form-field>
+        <p *ngIf="err.password" class="err">Password {{ err.password[0] }}</p>
+        <mat-form-field appearance="outline" class="sign-up-control">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" required name="password" ngModel />
+        </mat-form-field>
+        <button
+          class="float-right"
+          mat-raised-button
+          type="submit"
+          [disabled]="form.invalid"
+        >
+          Register<mat-icon> done_outline</mat-icon>
+        </button>
+      </form>
+    </div>
+    <div></div>
+  </div>
+</div>

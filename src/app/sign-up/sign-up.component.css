@@ -1,0 +1,61 @@
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  background-image: url('https://images5.alphacoders.com/390/thumb-1920-390620.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 94vh;
+}
+
+.main-sign-up {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}
+
+.err {
+  color: rgb(227, 59, 59);
+  font-size: bold;
+}
+
+.sign-up-form {
+  padding: 15% 10%;
+  border-top-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  margin-top: 5%;
+  background: rgb(240, 248, 255, 0.3);
+  animation: scale 1s;
+}
+
+@keyframes scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.out {
+  animation: scaleOut 1s;
+}
+
+@keyframes scaleOut {
+  100% {
+    opacity: 1;
+    transform: scale(0);
+  }
+}
+
+.sign-up-control {
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .main-sign-up {
+    display: grid;
+    grid-template-columns: 0 1fr 0;
+  }
+}
